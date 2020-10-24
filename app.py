@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/", methods = ["GET", "POST"])
 def home():
-    return f"<h1>idk something</h1>"
+    return render_template("home.html")
 
 if __name__ == "__main__":
     app.run()
