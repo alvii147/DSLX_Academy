@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Hand Writing Practice{% endblock %}
+
+{% block styles %}
+{{super()}}
+<style>
+    h1   { text-align: center; font-size: 400%;}    
+</style>
+{% endblock %}
+
+{% block active %} 
+
+<li class="nav-item">
+    <a class="nav-link" href="/about/">ABOUT US</a>
+</li>
+<li class="nav-item active">
+    <a class="nav-link" href="/handwriting/">HANDWRITING<span class="sr-only">(current)</span></a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="/games/">GAMES</a>
+</li>
+{% endblock %}
+
+{% block header %}
+<h1>PRACTICE</h1>
+{% endblock %}
+
+{% block content %}
+    <h1></h1>
+{% endblock %}

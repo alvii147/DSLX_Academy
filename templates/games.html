@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}GAMES{% endblock %}
+
+{% block styles %}
+{{super()}}
+<style>
+    h1   {color: black; text-align: center; font-size: 400%;}    
+</style>
+{% endblock %}
+
+{% block active %}
+
+<li class="nav-item">
+    <a class="nav-link" href="/about/">ABOUT US</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="/handwriting/">HANDWRITING</a>
+</li>
+<li class="nav-item active">
+    <a class="nav-link" href="/games/">GAMES<span class="sr-only">(current)</span></a>
+</li>
+{% endblock %}
+
+{% block header %}
+<h1>GAMES</h1>
+{% endblock %}
+
+{% block content %}
+    
+{% endblock %}
