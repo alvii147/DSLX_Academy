@@ -1,6 +1,52 @@
-<!DOCTYPE html>
-<html>
-<body>
-<h1>Something</h1>
-</body>
-</html>
+{% extends "base.html" %}
+<!-- Info / CSS / Details -->
+{% block title %}Home Page{% endblock %}
+
+<!-- SPECIFIC CSS -->
+{% block styles %}
+{{super()}}
+<style>
+    h1   {color: black; font-style: italic; text-align: center; 
+        font-size: 1000%; position: relative; padding: 20% 0; 
+        text-shadow: 2px 2px 4px #000000;
+        background-color: rgba(168, 194, 168, 0.486); }
+
+    
+    html {
+        background-color: rgb(9, 44, 9);
+    }
+    body {
+        background: url(https://i.pinimg.com/originals/ed/a5/73/eda5739966cb33768d8ad0d77d7307ce.gif) no-repeat center; 
+            background-size:contain;
+        }
+    </style>
+{% endblock %}
+<!-- Info / CSS / Details -->
+
+<!-- o _ o -->
+
+{% block active %}
+<li class="nav-item">
+    <a class="nav-link" href="/about/">ABOUT US</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="/handwriting/">HANDWRITING</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="/games/">GAMES</a>
+</li>
+{% endblock %}
+
+{% block header %}
+<p>
+    <h1>DSLX</h1>
+    <h2>Lorem ipsum lalalalala brief information. Slogan?</h2>
+</p>
+
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
+
+<!-- o _ o -->
