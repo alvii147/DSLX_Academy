@@ -1,16 +1,28 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, redirect, url_for, render_template
+from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
 
-@app.route("/", methods = ["GET", "POST"])
+Bootstrap(app)
+
+#home / home
+@app.route("/")
 def home():
     return render_template("home.html")
 
-# handwriting recognition page
+#about 
+@app.route('/about/')
+def about():
+    return render_template("about.html")
 
-# reading
+@app.route('/handwriting/')
+def handwriting():
+    return render_template("hwp.html")
 
-# memory game page
+@app.route('/games/')
+def games():
+    return render_template("games.html")
+
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
