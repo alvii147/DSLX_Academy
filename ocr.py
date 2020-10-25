@@ -45,5 +45,5 @@ def assess(origWord, writtenWord):
     return retList
 
 if __name__ == "__main__":
-    writtenWord, characters = processData(getData('static/img2.png'))
-    print(assess("Pronounciation", writtenWord))
+    writtenWord, characters = processData(getData('static/image.png'))
+    print(assess("anggt", writtenWord))

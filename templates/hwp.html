@@ -4,7 +4,10 @@
 {% block styles %}
 {{super()}}
 <style>
-    h1   { text-align: center; font-size: 400%;}    
+    h1   { text-align: center; font-size: 400%;}
+    #canvas {
+        border: 2px solid rgb(0, 0, 0);
+    }
 </style>
 {% endblock %}
 
@@ -22,9 +25,19 @@
 {% endblock %}
 
 {% block header %}
-<h1>PRACTICE</h1>
+<h1>HANDWRITING PRACTICE</h1>
 {% endblock %}
 
 {% block content %}
-    <h1></h1>
+    <script src = "{{url_for('static', filename='canvas.js')}}"></script>
+    <div style = "margin: auto; width: 50%;">
+        <p style = "color: blue; font-family: 'Times New Roman', Times, serif; font-size: 25px; text-align: center;">
+            {{word}}
+        </p>
+        <p style = "color: grey; font-family: 'Times New Roman', Times, serif; font-size: 14px; text-align: center;">
+            {{definition}}
+        </p>
+        <canvas id = "canvas"></canvas>
+        <button onclick = "sendImage();">Go!</button>
+    </div>
 {% endblock %}
