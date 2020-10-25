@@ -11,6 +11,16 @@ speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=service_r
 
 words = {"kitten":2, "school":1, "cat":1, "rat":1, "morning":2, "September":3, "year":1, "hospital":3, "doctor":2, "Saturday":3, "Sunday":2, "Monday":2, "Tuesday":2, "Wednesday":3, "Thursday":2, "Friday":2, "January":4, "February":4, "March":1, "April":2, "May":1, "June":1, "July":1, "August":2, "October":3, "November":3, "December":3, "bedding":2, "wedding":2, "chicken":2, "holly":2, "tomato":3}
 
+def getWordData():
+    word = random.choice(list(words.keys()))
+    return word, words[word]
+
+def getRecording():
+    speech_recognizer = speechsdk.SpeechRecognizer(speech_config=speech_config)
+    result = speech_recognizer.recognize_once_async().get()
+    result = result.text.strip('.').strip('?').strip('!').strip(',').lower()
+    return result
+"""
 def num_syllables():
     status = 'n'
     while status == 'n':
@@ -46,6 +56,6 @@ def num_syllables():
         status = input('Are you tired? Enter (y/n): ')
         if status == 'y':
             break
-
+"""
 if __name__ == "__main__":
-    num_syllables()
+    print(getRecording())
