@@ -48,6 +48,7 @@ function sendImage() {
         data: JSON.stringify(dataURL),
         success: function(response){
             console.log(response)
+            document.location.href = "results/"
         }
     })
 }

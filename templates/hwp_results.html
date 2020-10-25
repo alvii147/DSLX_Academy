@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}Hand Writing Practice{% endblock %}
+
+{% block styles %}
+{{super()}}
+<style>
+    h1   { text-align: center; font-size: 400%;}
+    .button {
+        background-color: white; /* Green */
+        border: 2px solid #8d221a;
+        color: black;
+        padding: 8px 12px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+    .button:hover {
+        background-color: #8d221a;
+        color: white;
+    }
+</style>
+{% endblock %}
+
+{% block active %} 
+
+<li class="nav-item">
+    <a class="nav-link" href="/about/">ABOUT US</a>
+</li>
+<li class="nav-item active">
+    <a class="nav-link" href="/handwriting/">HANDWRITING<span class="sr-only">(current)</span></a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="/games/">GAMES</a>
+</li>
+{% endblock %}
+
+{% block header %}
+<h1>HANDWRITING PRACTICE</h1>
+{% endblock %}
+
+{% block content %}
+    <div style = "margin: auto; width: 50%;">
+        <p style = "line-height: 0.6; font-family: 'Times New Roman', Times, serif; font-size: 45px; text-align: center;">
+            <span style = "color: darkgrey; font-size: 20px; padding-bottom: 0px;">Letters that you wrote perfectly are in</span>
+            <span style = "color: #4CAF50; font-size: 20px;">GREEN</span><br>
+            <span style = "color: darkgrey; font-size: 20px;">And the ones that you missed are in</span>
+            <span style = "color: #8d221a; font-size: 20px;">RED</span><br><br>
+            {% for r in res %}
+            {% if r[1] == 1 %}
+            <span style = "color: #4CAF50">{{r[0].upper()}}</span>
+            {% else %}
+            <span style = "color: #8d221a">{{r[0].upper()}}</span>
+            {% endif %}
+            {% endfor %}
+            <br><br><a href = "/handwriting/"><button class = "button">Try Again</button></a>
+        </p>
+    </div>
+{% endblock %}

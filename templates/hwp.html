@@ -8,6 +8,23 @@
     #canvas {
         border: 2px solid rgb(0, 0, 0);
     }
+    .button {
+        background-color: white; /* Green */
+        border: 2px solid #4CAF50;
+        color: black;
+        padding: 8px 12px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+    .button:hover {
+        background-color: #4CAF50;
+        color: white;
+    }
 </style>
 {% endblock %}
 
@@ -31,13 +48,12 @@
 {% block content %}
     <script src = "{{url_for('static', filename='canvas.js')}}"></script>
     <div style = "margin: auto; width: 50%;">
-        <p style = "color: blue; font-family: 'Times New Roman', Times, serif; font-size: 25px; text-align: center;">
-            {{word}}
-        </p>
-        <p style = "color: grey; font-family: 'Times New Roman', Times, serif; font-size: 14px; text-align: center;">
-            {{definition}}
+        <p style = "font-family: 'Times New Roman', Times, serif; text-align: left;">
+            <span style = "color: rgb(0, 153, 255); font-size: 25px;">{{word}}</span>
+            <span style = "color: darkgrey; font-size: 17px;"><br>• {{definition}}</span>
         </p>
         <canvas id = "canvas"></canvas>
-        <button onclick = "sendImage();">Go!</button>
+        <button class = "button" onclick = "sendImage();">Go!</button>
+        <button class = "button" onclick = "clearCanvas();">Clear</button>
     </div>
 {% endblock %}

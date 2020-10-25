@@ -13,6 +13,7 @@ currWord = ""
 wordslist = []
 speechWord = ""
 speechSyllables = 0
+res = []
 
 #home / home
 @app.route("/")
@@ -27,6 +28,7 @@ def about():
 @app.route('/handwriting/', methods = ["GET", "POST"])
 def handwriting():
     global currWord
+    global res
     if request.method == "POST":
         reqjson = str(request.get_json())[22:]
         with open("image.png", "wb") as imgfile:
@@ -34,11 +36,15 @@ def handwriting():
         writtenWord, characters = processData(getData('image.png'))
         res = assess(currWord, writtenWord)
         print(res)
-        print(jsonify(res))
         return jsonify("OK")
     currWord = wordslist[random.randint(0, len(wordslist))].split(';')[0]
     definition = wordslist[random.randint(0, len(wordslist))].split(';')[1]
     return render_template("hwp.html", word = currWord, definition = definition)
+
+@app.route('/handwriting/results/', methods = ["GET", "POST"])
+def handwriting_results():
+    global res
+    return render_template("hwp_results.html", res = res)
 
 @app.route('/games/')
 def games():
