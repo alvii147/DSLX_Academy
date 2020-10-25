@@ -4,7 +4,24 @@
 {% block styles %}
 {{super()}}
 <style>
-    h1   {color: black; text-align: center; font-size: 400%;}    
+    h1   {color: black; text-align: center; font-size: 400%;}
+    .button {
+        background-color: white; /* Green */
+        border: 2px solid #4CAF50;
+        color: black;
+        padding: 8px 12px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+    .button:hover {
+        background-color: #4CAF50;
+        color: white;
+    }
 </style>
 {% endblock %}
 
@@ -17,6 +34,9 @@
     <a class="nav-link" href="/handwriting/">HANDWRITING</a>
 </li>
 <li class="nav-item active">
+    <a class="nav-link" href="/speech/">SPEECH</a>
+</li>
+<li class="nav-item">
     <a class="nav-link" href="/games/">GAMES<span class="sr-only">(current)</span></a>
 </li>
 {% endblock %}
@@ -26,8 +46,14 @@
 {% endblock %}
 
 {% block content %}
-<p>{{msg}}</p>
-<form action="/speech/">
-    <input type="submit" value="Again!" />
-</form>
+<div style = "margin: auto; width: 50%;">
+    <p style = "color: rgb(75, 75, 75); line-height: 0.6; font-family: 'Times New Roman', Times, serif; font-size: 32px; text-align: center;">
+        <span>{{msg}}<br><br></span>
+    </p>
+    <div style = "margin: auto; width: 9%;">
+        <form action = "/speech/" method = "post">
+            <input class = "button" type = "submit" value = "Again!" />
+        </form>
+    </div>
+</div>
 {% endblock %}
