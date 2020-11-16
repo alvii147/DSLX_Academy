@@ -3,6 +3,7 @@
 Children with dyslexia often have problems with reading and writing skills, including differentiating sounds in speech, learning letters, reversing sounds in words, and often confuse words that sound alike. This often leads to dyslexic children falling below academic expectations. 
   
 ![Infographic](https://www.readinghorizons.com/Media/Default/Images/Resources/dyslexia_infographic3-01.jpg)
+*[flickr](https://www.flickr.com/photos/55512706@N03/30427492672)*  
   
 We want to help these children by providing them with a dyslexic-friendly environment with activities that can support their growth and development of skills. By designing a simple interface, we want to support children, as they are just beginning to explore and work with their disability.
 
